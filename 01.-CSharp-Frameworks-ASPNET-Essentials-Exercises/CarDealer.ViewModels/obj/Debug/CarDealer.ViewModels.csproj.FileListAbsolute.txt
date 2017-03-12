@@ -1,0 +1,5 @@
+F:\Data Kiril\SoftUni\Courses\C# Web ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.ViewModels\bin\Debug\CarDealer.ViewModels.dll
+F:\Data Kiril\SoftUni\Courses\C# Web ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.ViewModels\bin\Debug\CarDealer.ViewModels.pdb
+F:\Data Kiril\SoftUni\Courses\C# Web ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.ViewModels\obj\Debug\CarDealer.ViewModels.dll
+F:\Data Kiril\SoftUni\Courses\C# Web ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.ViewModels\obj\Debug\CarDealer.ViewModels.pdb
+F:\Data Kiril\SoftUni\Courses\C# Web ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.ViewModels\obj\Debug\CarDealer.ViewModels.csprojResolveAssemblyReference.cache

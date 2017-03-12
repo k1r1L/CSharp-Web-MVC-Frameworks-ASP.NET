@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CarDealer.ViewModels.AllPartViewModel>
+
+@{
+    ViewBag.Title = "All";
+}
+
+<h2>All</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Name: 
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Name
+        </td>
+        <td>
+            <a href="/part/delete/@item.Id">Delete</a>
+        </td>
+    </tr>
+}
+
+</table>

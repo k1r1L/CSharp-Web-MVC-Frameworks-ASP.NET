@@ -1,0 +1,74 @@
+﻿@using CarDealer.ViewModels
+@model IEnumerable<SaleViewModel>
+
+@{
+    ViewBag.Title = "All";
+}
+
+<h2>Discounted Sales</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.BirthDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.IsYoungDriver)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car.Make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car.TravelledDistance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceWithoutDiscount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceWithDiscount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountPercentage)
+        </th>
+    </tr>
+
+    @foreach (SaleViewModel saleVm in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => saleVm.Customer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => saleVm.Customer.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => saleVm.Customer.IsYoungDriver)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => saleVm.Car.Make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => saleVm.Car.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => saleVm.Car.TravelledDistance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => saleVm.PriceWithoutDiscount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => saleVm.PriceWithDiscount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => saleVm.DiscountPercentage)%
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CarDealer.ViewModels.SupplierViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Suppliers</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Name 
+        </th>
+        <th>
+            Number of parts:
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Id
+        </td>
+        <td>
+            @item.Name
+        </td>
+        <td>
+            @item.NumberOfParts
+        </td>
+    </tr>
+}
+
+</table>

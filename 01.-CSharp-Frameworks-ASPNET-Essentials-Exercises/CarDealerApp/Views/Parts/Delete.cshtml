@@ -1,0 +1,26 @@
+﻿@model CarDealer.ViewModels.AllPartViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Part</h2>
+
+<h3>Are you sure you want to delete this part?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Model.Name
+        </dt>
+        <dd>
+            <form method="POST">
+                <div class="form-actions no-color">
+                    <input type="hidden" name="Id" value="@Model.Id" />
+                    <input type="submit" value="Delete" class="btn btn-default" />
+                </div>
+            </form>  
+        </dd>
+    </dl>
+    
+</div>
