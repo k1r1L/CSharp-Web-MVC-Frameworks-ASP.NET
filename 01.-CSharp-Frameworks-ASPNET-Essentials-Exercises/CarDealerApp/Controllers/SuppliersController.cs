@@ -13,6 +13,7 @@
         public SuppliersController()
         {
             this.service = new SuppliersService();
+            ViewBag.IsLogged = this.service.IsLogged();
         }
 
         // GET: Suppliers by type (optional)

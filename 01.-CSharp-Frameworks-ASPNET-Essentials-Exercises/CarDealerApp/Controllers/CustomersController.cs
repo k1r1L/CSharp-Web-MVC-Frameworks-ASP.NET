@@ -14,6 +14,7 @@
         public CustomersController()
         {
             this.service = new CustomersService();
+            ViewBag.IsLogged = this.service.IsLogged();
         }
 
         // GET: All Customers

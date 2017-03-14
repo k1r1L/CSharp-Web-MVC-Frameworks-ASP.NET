@@ -14,3 +14,8 @@ C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks
 C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Models\obj\Debug\CarDealer.Models.csprojResolveAssemblyReference.cache
 C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Models\obj\Debug\CarDealer.Models.dll
 C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Models\obj\Debug\CarDealer.Models.pdb
+F:\Data Kiril\SoftUni\Courses\C# Web ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Models\bin\Debug\CarDealer.Models.dll
+F:\Data Kiril\SoftUni\Courses\C# Web ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Models\bin\Debug\CarDealer.Models.pdb
+F:\Data Kiril\SoftUni\Courses\C# Web ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Models\obj\Debug\CarDealer.Models.csprojResolveAssemblyReference.cache
+F:\Data Kiril\SoftUni\Courses\C# Web ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Models\obj\Debug\CarDealer.Models.dll
+F:\Data Kiril\SoftUni\Courses\C# Web ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Models\obj\Debug\CarDealer.Models.pdb

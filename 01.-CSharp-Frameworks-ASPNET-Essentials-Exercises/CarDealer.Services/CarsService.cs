@@ -1,5 +1,6 @@
 ﻿namespace CarDealer.Services
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using AutoMapper;
@@ -57,11 +58,6 @@
         public void AddCar(AddCarBindingModel acbm)
         {
             Car carEntity = Mapper.Map<Car>(acbm);
-            //foreach (int partId in acbm.Parts)
-            //{
-            //    carEntity.Parts.Add(this.DbContext.Parts.Find(partId));
-            //}
-
             this.DbContext.Cars.Add(carEntity);
             this.DbContext.SaveChanges();
         }

@@ -68,6 +68,18 @@
                         <li>@Html.ActionLink("All", "All", "Suppliers")</li>
                     </ul>
                 </li>
+                @if (ViewBag.IsLogged)
+                {
+                    <div class="nav navbar-brand">
+                        Hello, @Html.Action("GetCurrentUsername", "Account")
+                        @Html.ActionLink("Logout", "Logout", "Account")
+                    </div>
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Register", "Register" , "Account")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                }
             </ul>
         </div>
     </div>

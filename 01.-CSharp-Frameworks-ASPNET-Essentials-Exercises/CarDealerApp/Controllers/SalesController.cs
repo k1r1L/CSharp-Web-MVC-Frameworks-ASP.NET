@@ -13,6 +13,7 @@
         public SalesController()
         {
             this.service = new SalesService();
+            ViewBag.IsLogged = this.service.IsLogged();
         }
 
         // GET: All sales or individual sale (optional)

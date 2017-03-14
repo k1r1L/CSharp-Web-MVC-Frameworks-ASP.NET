@@ -36,7 +36,13 @@
                 action.CreateMap<AddCarBindingModel, Car>()
                     .ForMember(c => c.Parts, config => config.MapFrom(bm =>
                     this.DbContext.Parts.Where(p => bm.Parts.Contains(p.Id))));
+                action.CreateMap<RegisterUserBindingModel, User>();
             });
+        }
+
+        public bool IsLogged()
+        {
+            return this.DbContext.Logins.Any();
         }
     }
 }
