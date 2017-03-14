@@ -1,12 +1,9 @@
 ﻿namespace CarDealerApp.Controllers
 {
-    using System;
+    using System.Collections;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
-    using CarDealer.Data;
-    using CarDealer.Models;
+    using CarDealer.BindingModels;
     using CarDealer.Services;
     using CarDealer.ViewModels;
 
@@ -22,7 +19,7 @@
 
         // GET: Cars
         [Route("")] // sets default action
-        [Route("all/{make?}")]
+        [Route("all/{make?}"), HttpGet]
         public ActionResult All(string make)
         {
             IEnumerable<CarViewModel> vm = this.service.GetAllCars(make);
@@ -31,12 +28,33 @@
         }
 
         // GET: Car with parts by id (not optional)
-        [Route("~/car/{id}/parts")]
+        [Route("~/car/{id}/parts"), HttpGet]
         public ActionResult Details(int id)
         {
             CarPartsViewModel cpvm = this.service.GetCarWithParts(id);
 
             return View(cpvm);
+        }
+
+        // GET: Add car
+        [Route("~/car/create"), HttpGet]
+        public ActionResult Add()
+        {
+            IEnumerable<AllPartViewModel> allParts = this.service.GetAllParts();
+            return View(allParts);
+        }
+
+        // POST:
+        [Route("~/car/create"), HttpPost]
+        public ActionResult Add([Bind(Include = "Model,Make,TravelledDistance,Parts")] AddCarBindingModel acbm)
+        {
+            if (ModelState.IsValid)
+            {
+                this.service.AddCar(acbm);
+                return RedirectToAction("All");
+            }
+
+            return View();
         }
     }
 }

@@ -1,12 +1,8 @@
 ﻿namespace CarDealerApp.Controllers
 {
-    using System;
     using System.Collections.Generic;
     using System.Web.Mvc;
-    using AutoMapper;
     using CarDealer.BindingModels;
-    using CarDealer.Data;
-    using CarDealer.Models;
     using CarDealer.Services;
     using CarDealer.ViewModels;
 

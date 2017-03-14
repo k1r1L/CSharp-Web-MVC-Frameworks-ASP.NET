@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllPartViewModel.cs" />
+    <Compile Include="EditPartViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CarPartsViewModel.cs" />
     <Compile Include="CarViewModel.cs" />

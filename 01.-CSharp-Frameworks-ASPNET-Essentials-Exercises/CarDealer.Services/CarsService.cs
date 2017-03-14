@@ -1,10 +1,9 @@
 ﻿namespace CarDealer.Services
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+    using AutoMapper;
+    using BindingModels;
     using Models;
     using ViewModels;
 
@@ -53,6 +52,28 @@
             };
 
             return cpvm;
+        }
+
+        public void AddCar(AddCarBindingModel acbm)
+        {
+            Car carEntity = Mapper.Map<Car>(acbm);
+            //foreach (int partId in acbm.Parts)
+            //{
+            //    carEntity.Parts.Add(this.DbContext.Parts.Find(partId));
+            //}
+
+            this.DbContext.Cars.Add(carEntity);
+            this.DbContext.SaveChanges();
+        }
+
+        public IEnumerable<AllPartViewModel> GetAllParts()
+        {
+            return this.DbContext.Parts.Select(p => new AllPartViewModel()
+            {
+                Id = p.Id,
+                Name = p.Name
+            });
+
         }
     }
 }

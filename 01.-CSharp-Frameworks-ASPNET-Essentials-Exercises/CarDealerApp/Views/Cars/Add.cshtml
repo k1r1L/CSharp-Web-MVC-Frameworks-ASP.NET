@@ -1,0 +1,40 @@
+﻿@using CarDealer.ViewModels
+@model IEnumerable<CarDealer.ViewModels.AllPartViewModel>
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add Car</h2>
+
+<form method="POST">
+    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            <label for="make" class="control-label col-md-2">Make:</label>
+            <input type="text" class="form-control col-md-10" id="make" name="Make" />
+        </div>
+
+        <div class="form-group">
+            <label for="model" class="control-label col-md-2">Model:</label>
+            <input type="text" class="form-control col-md-10" id="model" name="Model" />
+        </div>
+
+        <div class="form-group">
+            <label for="travelledDistance" class="control-label col-md-2">Travelled Distance:</label>
+            <input type="number" class="form-control col-md-10" id="travelledDistance" name="TravelledDistance" />
+        </div>
+        
+        @foreach (AllPartViewModel part in Model)
+        {
+             <input type="checkbox" name="Parts" value="@part.Id" class="col-md-2"/>@part.Name<br>
+        }
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+</form>
+

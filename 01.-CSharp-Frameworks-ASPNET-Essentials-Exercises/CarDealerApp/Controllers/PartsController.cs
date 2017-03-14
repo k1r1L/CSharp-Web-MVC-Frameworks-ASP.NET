@@ -1,9 +1,6 @@
 ﻿namespace CarDealerApp.Controllers
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
     using CarDealer.BindingModels;
     using CarDealer.Services;
@@ -53,7 +50,7 @@
         [Route("part/delete/{id}"), HttpGet]
         public ActionResult Delete(int id)
         {
-            AllPartViewModel partVm = this.service.GetPartById(id);
+            AllPartViewModel partVm = this.service.GetAllPartById(id);
 
             return View(partVm);
         }
@@ -64,6 +61,26 @@
         {
             this.service.DeletePart(id);
             return RedirectToAction("All");
+        }
+
+        [Route("part/edit/{id}"), HttpGet]
+        public ActionResult Edit(int id)
+        {
+            EditPartViewModel vm = this.service.GetEditPartById(id);
+
+            return View(vm);
+        }
+
+        [Route("part/edit/{id}"), HttpPost]
+        public ActionResult Edit([Bind(Include = "Id,Price,Quantity")] EditPartBindingModel bindingModel)
+        {
+            if (ModelState.IsValid)
+            {
+                this.service.EditPart(bindingModel);
+                return RedirectToAction("All");
+            }
+
+            return RedirectToAction("Edit", new { id = bindingModel.Id });
         }
     }
 }

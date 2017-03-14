@@ -18,8 +18,57 @@
                 </button>
                 @Html.ActionLink("Car dealership", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-            </div>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <div class="dropdown-toggle nav navbar-brand" data-toggle="dropdown">
+                            Cars
+                        <span class="caret"></span>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("All", "All", "Cars")</li>
+                        <li>@Html.ActionLink("Create", "Add", "Cars")</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <div class="dropdown-toggle nav navbar-brand" data-toggle="dropdown">
+                        Customers
+                        <span class="caret"></span>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("All", "All", "Customers")</li>
+                        <li>@Html.ActionLink("Create", "Add", "Customers")</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <div class="dropdown-toggle nav navbar-brand" data-toggle="dropdown">
+                        Parts
+                        <span class="caret"></span>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("All", "All", "Parts")</li>
+                        <li>@Html.ActionLink("Create", "Add", "Parts")</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <div class="dropdown-toggle nav navbar-brand" data-toggle="dropdown">
+                        Sales
+                        <span class="caret"></span>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("All", "All", "Sales")</li>
+                        <li>@Html.ActionLink("Discounted", "Discounted", "Sales")</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <div class="dropdown-toggle nav navbar-brand" data-toggle="dropdown">
+                        Suppliers
+                        <span class="caret"></span>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("All", "All", "Suppliers")</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="container body-content">

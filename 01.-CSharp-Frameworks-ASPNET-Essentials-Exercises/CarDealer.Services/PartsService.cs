@@ -1,10 +1,8 @@
 ﻿namespace CarDealer.Services
 {
-    using System;
     using System.Collections.Generic;
+    using System.Data.Entity;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using AutoMapper;
     using BindingModels;
     using Models;
@@ -44,11 +42,19 @@
             });
         }
 
-        public AllPartViewModel GetPartById(int id)
+        public AllPartViewModel GetAllPartById(int id)
         {
             Part partEntity = this.DbContext.Parts.Find(id);
 
             return Mapper.Map<AllPartViewModel>(partEntity);
+        }
+
+        public EditPartViewModel GetEditPartById(int id)
+        {
+            Part partEntity = this.DbContext.Parts.Find(id);
+            EditPartViewModel epvm = Mapper.Map<EditPartViewModel>(partEntity);
+
+            return epvm;
         }
 
         public void DeletePart(int id)
@@ -56,6 +62,19 @@
             Part partEntity = this.DbContext.Parts.Find(id);
             this.DbContext.Parts.Remove(partEntity);
             this.DbContext.SaveChanges();
+        }
+
+        public void EditPart(EditPartBindingModel bindingModel)
+        {
+            Part partEntity = this.DbContext.Parts.Find(bindingModel.Id);
+            if (partEntity != null)
+            {
+                partEntity.Price = bindingModel.Price;
+                partEntity.Quantity = bindingModel.Quantity;
+                this.DbContext.Entry(partEntity).State = EntityState.Modified;
+                this.DbContext.SaveChanges();
+            }
+
         }
     }
 }
