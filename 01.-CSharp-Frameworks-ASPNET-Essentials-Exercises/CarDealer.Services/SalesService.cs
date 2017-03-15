@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace CarDealer.Services
 {
+    using AutoMapper;
+    using BindingModels;
+    using Models;
     using ViewModels;
 
     public class SalesService : Service
@@ -124,6 +127,54 @@ namespace CarDealer.Services
                        ? (int)((sale.Discount + 0.05) * 100)
                        : (int)(sale.Discount * 100)
                 });
+        }
+
+        public AddSaleViewModel GetAddSaleViewModel()
+        {
+            AddSaleViewModel saleViewModel = new AddSaleViewModel()
+            {
+                Cars = this.DbContext.Cars.Select(car => new AddSaleCarViewModel()
+                {
+                    Id = car.Id,
+                    Make =  car.Make,
+                    Model =  car.Model
+                }),
+                Customers = this.DbContext.Customers.Select(customer => new AddSaleCustomerViewModel()
+                {
+                    Id = customer.Id,
+                    Name = customer.Name
+                })
+            };
+
+            return saleViewModel;
+        }
+
+        public ReviewSaleViewModel GetReviewSaleViewModel(AddSaleBindingModel asbm)
+        {
+            Car carEntity = this.DbContext.Cars.Find(asbm.CarId);
+            Customer customerEntity = this.DbContext.Customers.Find(asbm.CustomerId);
+
+            ReviewSaleViewModel reviewViewModel = new ReviewSaleViewModel()
+            {
+                Car = Mapper.Map<AddSaleCarViewModel>(carEntity),
+                Customer = Mapper.Map<AddSaleCustomerViewModel>(customerEntity),
+                CarDisplay = carEntity.Make + " " + carEntity.Model,
+                Discount = asbm.Discount,
+                HasAdditionalDiscount = customerEntity.IsYoungDriver,
+                CarPrice = carEntity.Parts.Sum(part => part.Price),
+                FinalCarPrice = customerEntity.IsYoungDriver 
+                    ? carEntity.Parts.Sum(p => p.Price) - ((asbm.Discount + 5) / 100) * carEntity.Parts.Sum(p => p.Price)
+                    : carEntity.Parts.Sum(p => p.Price) - (asbm.Discount  / 100) * carEntity.Parts.Sum(p => p.Price)
+            };
+
+            return reviewViewModel;
+        }
+
+        public void FinalizeSale(AddSaleBindingModel asbm)
+        {
+            Sale saleEntity = Mapper.Map<Sale>(asbm);
+            this.DbContext.Sales.Add(saleEntity);
+            this.DbContext.SaveChanges();
         }
     }
 }

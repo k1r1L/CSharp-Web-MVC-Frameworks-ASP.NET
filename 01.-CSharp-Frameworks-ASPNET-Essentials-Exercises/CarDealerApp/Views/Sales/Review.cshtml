@@ -1,0 +1,58 @@
+﻿@model CarDealer.ViewModels.ReviewSaleViewModel
+
+@{
+    ViewBag.Title = "Review";
+}
+
+<h1>Review Sale</h1>
+
+@using (Html.BeginForm("FinalizeSale", "Sales", FormMethod.Post)) 
+{
+  
+    <div class="form-horizontal">
+        <div class="form-group">
+            <input type="hidden" name="CustomerId", value="@Model.Customer.Id"/>
+            @Html.LabelFor(model => model.Customer, new {@class = "control-label col-md-2"})
+            @Html.TextBoxFor(model => model.Customer.Name, new {@class = "form-control col-md-10", @readonly = "readonly"})
+        </div>
+        
+        <div class="form-group">
+            <input type="hidden" name="CarId" , value="@Model.Car.Id" />
+            @Html.LabelFor(model => model.Car, new {@class = "control-label col-md-2"})
+            @Html.TextBoxFor(model => model.CarDisplay, new {@class = "form-control col-md-10", @readonly = "readonly"})
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Discount, new { @class = "control-label col-md-2" })
+            @if (@Model.HasAdditionalDiscount)
+            {
+                double newDiscount = @Model.Discount + 5;
+                <input type="hidden" name="Discount" value="@newDiscount"/>
+                @Html.TextBoxFor(model => model.Discount, new { @class = "form-control col-md-10", @readonly = "readonly", Value = $"{Model.Discount}% (+5%)" })
+            }
+            else
+            {
+                <input type="hidden" name="Discount" value="@Model.Discount" />
+                @Html.TextBoxFor(model => model.Discount, new { @class = "form-control col-md-10", @readonly = "readonly", Value = $"{Model.Discount}%"})
+            }
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CarPrice, new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(model => model.CarPrice, new { @class = "form-control col-md-10", @readonly = "readonly"})
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FinalCarPrice, new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(model => model.FinalCarPrice, new { @class = "form-control col-md-10", @readonly = "readonly" })
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Finalize" class="btn btn-primary"/>
+            </div>
+        </div>
+    </div>
+}
+

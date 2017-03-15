@@ -193,6 +193,8 @@
     <Content Include="Views\Cars\Add.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Sales\Add.cshtml" />
+    <Content Include="Views\Sales\Review.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

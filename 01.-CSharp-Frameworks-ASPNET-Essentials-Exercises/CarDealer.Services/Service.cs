@@ -35,8 +35,18 @@
                 action.CreateMap<Part, EditPartViewModel>();
                 action.CreateMap<AddCarBindingModel, Car>()
                     .ForMember(c => c.Parts, config => config.MapFrom(bm =>
-                    this.DbContext.Parts.Where(p => bm.Parts.Contains(p.Id))));
+                        this.DbContext.Parts.Where(p => bm.Parts.Contains(p.Id))));
                 action.CreateMap<RegisterUserBindingModel, User>();
+                action.CreateMap<Customer, AddSaleCustomerViewModel>();
+                action.CreateMap<Car, AddSaleCarViewModel>();
+                action.CreateMap<Sale, AddSaleViewModel>();
+                action.CreateMap<AddSaleBindingModel, Sale>()
+                    .ForMember(sale => sale.Car, config => config.MapFrom(
+                        bm => this.DbContext.Cars.Find(bm.CarId)))
+                    .ForMember(sale => sale.Customer, config => config.MapFrom(
+                        bm => this.DbContext.Customers.Find(bm.CustomerId)))
+                    .ForMember(sale => sale.Discount, config => config.MapFrom(
+                        bm => bm.Discount / 100));
             });
         }
 

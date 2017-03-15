@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddSaleCarViewModel.cs" />
+    <Compile Include="AddSaleCustomerViewModel.cs" />
+    <Compile Include="AddSaleViewModel.cs" />
     <Compile Include="AllPartViewModel.cs" />
     <Compile Include="EditPartViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -47,6 +50,7 @@
     <Compile Include="CarViewModel.cs" />
     <Compile Include="CustomerDetailsViewModel.cs" />
     <Compile Include="CustomerViewModel.cs" />
+    <Compile Include="ReviewSaleViewModel.cs" />
     <Compile Include="SupplierViewModel.cs" />
     <Compile Include="PartViewModel.cs" />
     <Compile Include="SaleViewModel.cs" />

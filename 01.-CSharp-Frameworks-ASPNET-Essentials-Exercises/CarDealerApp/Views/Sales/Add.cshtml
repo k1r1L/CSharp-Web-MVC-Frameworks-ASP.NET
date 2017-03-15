@@ -1,0 +1,68 @@
+﻿@using System.Activities.Expressions
+@using System.Activities.Statements
+@using CarDealer.ViewModels
+@model AddSaleViewModel
+
+@{
+    ViewBag.Title = "Add";
+    List<SelectListItem> customersList = new List<SelectListItem>();
+    List<SelectListItem> carsList = new List<SelectListItem>();
+    List<SelectListItem> discountList = new List<SelectListItem>();
+
+    foreach (AddSaleCustomerViewModel customerVm in @Model.Customers)
+    {
+        customersList.Add(new SelectListItem()
+        {
+            Text = customerVm.Name,
+            Value = customerVm.Id.ToString()
+        });
+    }
+
+    foreach (AddSaleCarViewModel carVm in @Model.Cars)
+    {
+        carsList.Add(new SelectListItem()
+        {
+            Text = carVm.Make + " " + carVm.Model,
+            Value = carVm.Id.ToString()
+        });
+    }
+
+    foreach (double discount in @Model.Discounts)
+    {
+        discountList.Add( new SelectListItem()
+        {
+            Text = discount.ToString("F0"),
+            Value = discount.ToString("F0")
+        });
+    }
+}
+
+<h1>Add Sales</h1>
+
+@using (Html.BeginForm("Review", "Sales", FormMethod.Get)) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />     
+        <div class="form-group">
+            @Html.LabelFor(model => model.Customers, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.DropDownListFor(model => model.Customers, customersList, new { @class = "form-control col-md-10", Name = "CustomerId"})<br />
+        </div> 
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cars, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.DropDownListFor(model => model.Cars, carsList, new { @class = "form-control col-md-10", Name = "CarId"})
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Discounts, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.DropDownListFor(model => model.Discounts, discountList, new { @class = "form-control col-md-10", Name = "Discount" })
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}

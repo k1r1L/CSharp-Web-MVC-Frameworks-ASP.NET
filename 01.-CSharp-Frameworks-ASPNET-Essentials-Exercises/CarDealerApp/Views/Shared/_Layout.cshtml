@@ -21,7 +21,7 @@
             <ul class="nav navbar-nav">
                 <li class="dropdown">
                     <div class="dropdown-toggle nav navbar-brand" data-toggle="dropdown">
-                            Cars
+                        Cars
                         <span class="caret"></span>
                     </div>
                     <ul class="dropdown-menu">
@@ -57,6 +57,7 @@
                     <ul class="dropdown-menu">
                         <li>@Html.ActionLink("All", "All", "Sales")</li>
                         <li>@Html.ActionLink("Discounted", "Discounted", "Sales")</li>
+                        <li>@Html.ActionLink("Add", "Add", "Sales")</li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -68,19 +69,21 @@
                         <li>@Html.ActionLink("All", "All", "Suppliers")</li>
                     </ul>
                 </li>
-                @if (ViewBag.IsLogged)
-                {
-                    <div class="nav navbar-brand">
-                        Hello, @Html.Action("GetCurrentUsername", "Account")
-                        @Html.ActionLink("Logout", "Logout", "Account")
-                    </div>
-                }
-                else
-                {
-                    <li>@Html.ActionLink("Register", "Register" , "Account")</li>
-                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                }
             </ul>
+            @if (ViewBag.IsLogged)
+            {
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav navbar-brand">Hello, @Html.Action("GetCurrentUsername", "Account")</li>
+                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                </ul>
+            }
+            else
+            {
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                </ul>
+            }
         </div>
     </div>
     <div class="container body-content">
