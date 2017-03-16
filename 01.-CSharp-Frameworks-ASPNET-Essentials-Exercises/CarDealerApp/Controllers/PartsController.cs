@@ -5,6 +5,8 @@
     using CarDealer.BindingModels;
     using CarDealer.Services;
     using CarDealer.ViewModels;
+    using CarDealer.ViewModels.Parts;
+    using CarDealer.ViewModels.Suppliers;
 
     public class PartsController : Controller
     {

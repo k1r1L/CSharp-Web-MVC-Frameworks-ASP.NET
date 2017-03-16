@@ -7,6 +7,9 @@ namespace CarDealer.Services
     using BindingModels;
     using Models;
     using ViewModels;
+    using ViewModels.Cars;
+    using ViewModels.Customers;
+    using ViewModels.Sales;
 
     public class SalesService : Service
     {

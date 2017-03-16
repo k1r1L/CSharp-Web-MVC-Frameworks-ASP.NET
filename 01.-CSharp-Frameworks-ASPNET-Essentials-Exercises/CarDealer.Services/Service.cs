@@ -1,11 +1,16 @@
 ﻿namespace CarDealer.Services
 {
+    using System.Collections.Generic;
     using System.Linq;
     using AutoMapper;
     using BindingModels;
     using Data;
     using Models;
     using ViewModels;
+    using ViewModels.Customers;
+    using ViewModels.Parts;
+    using ViewModels.Sales;
+    using ViewModels.Suppliers;
 
     public abstract class Service
     {
@@ -47,6 +52,9 @@
                         bm => this.DbContext.Customers.Find(bm.CustomerId)))
                     .ForMember(sale => sale.Discount, config => config.MapFrom(
                         bm => bm.Discount / 100));
+                action.CreateMap<Supplier, NewSupplierViewModel>();
+                action.CreateMap<Supplier, EditSupplierViewModel>();
+                action.CreateMap<Supplier, DeleteSupplierViewModel>();
             });
         }
 

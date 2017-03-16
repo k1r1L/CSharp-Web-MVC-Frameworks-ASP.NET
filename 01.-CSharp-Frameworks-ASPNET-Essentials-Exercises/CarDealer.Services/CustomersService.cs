@@ -7,6 +7,7 @@
     using BindingModels;
     using Models;
     using ViewModels;
+    using ViewModels.Customers;
 
     public class CustomersService : Service
     {

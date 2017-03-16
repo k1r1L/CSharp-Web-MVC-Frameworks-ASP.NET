@@ -10,6 +10,7 @@ namespace CarDealer.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "CarDealer.Data.CarDealerContext";
         }
 

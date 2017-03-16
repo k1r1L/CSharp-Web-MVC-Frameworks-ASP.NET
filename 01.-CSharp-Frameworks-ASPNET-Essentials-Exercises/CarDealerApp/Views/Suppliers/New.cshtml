@@ -1,0 +1,59 @@
+﻿@using CarDealer.ViewModels.Suppliers
+@model IEnumerable<NewSupplierViewModel>
+
+@{
+    ViewBag.Title = "New";
+}
+
+<br/>
+@using (Html.BeginForm("Add", "Suppliers", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(model => model.First().Name, new { @class = "form-label"})
+        @Html.EditorFor(model => model.First().Name, new { htmlAttributes = new{ @class = "form-control"}})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.First().IsImporter)
+        @Html.EditorFor(model => model.First().IsImporter)
+    </div>
+    <div class="form-group">
+        <input type="submit" value="New Supplier" class="btn btn-primary"/>
+    </div>
+}
+    <table class="table">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Importer
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+
+        @foreach (NewSupplierViewModel supplier in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => supplier.Name)
+                </td>
+                <td>
+                    @if (supplier.IsImporter)
+                    {
+                        <p>Yes</p>
+                    }
+                    else
+                    {
+                        <p>No</p>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = supplier.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = supplier.Id })
+                </td>
+            </tr>
+        }
+    </table>

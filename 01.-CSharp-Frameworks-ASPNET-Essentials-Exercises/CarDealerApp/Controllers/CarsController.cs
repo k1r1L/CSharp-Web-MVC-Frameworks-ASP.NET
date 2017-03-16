@@ -6,6 +6,8 @@
     using CarDealer.BindingModels;
     using CarDealer.Services;
     using CarDealer.ViewModels;
+    using CarDealer.ViewModels.Cars;
+    using CarDealer.ViewModels.Parts;
 
     [RoutePrefix("cars")]
     public class CarsController : Controller

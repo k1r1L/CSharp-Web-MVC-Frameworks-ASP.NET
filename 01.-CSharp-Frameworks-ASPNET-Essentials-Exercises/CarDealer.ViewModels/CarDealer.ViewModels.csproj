@@ -40,20 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddSaleCarViewModel.cs" />
-    <Compile Include="AddSaleCustomerViewModel.cs" />
-    <Compile Include="AddSaleViewModel.cs" />
-    <Compile Include="AllPartViewModel.cs" />
-    <Compile Include="EditPartViewModel.cs" />
+    <Compile Include="Sales\AddSaleCarViewModel.cs" />
+    <Compile Include="Sales\AddSaleCustomerViewModel.cs" />
+    <Compile Include="Sales\AddSaleViewModel.cs" />
+    <Compile Include="Parts\AllPartViewModel.cs" />
+    <Compile Include="Parts\EditPartViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CarPartsViewModel.cs" />
-    <Compile Include="CarViewModel.cs" />
-    <Compile Include="CustomerDetailsViewModel.cs" />
-    <Compile Include="CustomerViewModel.cs" />
-    <Compile Include="ReviewSaleViewModel.cs" />
-    <Compile Include="SupplierViewModel.cs" />
-    <Compile Include="PartViewModel.cs" />
-    <Compile Include="SaleViewModel.cs" />
+    <Compile Include="Cars\CarPartsViewModel.cs" />
+    <Compile Include="Cars\CarViewModel.cs" />
+    <Compile Include="Customers\CustomerDetailsViewModel.cs" />
+    <Compile Include="Customers\CustomerViewModel.cs" />
+    <Compile Include="Sales\ReviewSaleViewModel.cs" />
+    <Compile Include="Suppliers\DeleteSupplierViewModel.cs" />
+    <Compile Include="Suppliers\EditSupplierViewModel.cs" />
+    <Compile Include="Suppliers\NewSupplierViewModel.cs" />
+    <Compile Include="Suppliers\SupplierViewModel.cs" />
+    <Compile Include="Parts\PartViewModel.cs" />
+    <Compile Include="Sales\SaleViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

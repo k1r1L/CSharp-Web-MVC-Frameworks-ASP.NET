@@ -195,6 +195,9 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Sales\Add.cshtml" />
     <Content Include="Views\Sales\Review.cshtml" />
+    <Content Include="Views\Suppliers\New.cshtml" />
+    <Content Include="Views\Suppliers\Edit.cshtml" />
+    <Content Include="Views\Suppliers\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

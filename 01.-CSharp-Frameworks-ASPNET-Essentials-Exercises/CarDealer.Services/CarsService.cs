@@ -7,6 +7,8 @@
     using BindingModels;
     using Models;
     using ViewModels;
+    using ViewModels.Cars;
+    using ViewModels.Parts;
 
     public class CarsService : Service
     {

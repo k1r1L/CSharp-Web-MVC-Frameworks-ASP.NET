@@ -1,12 +1,18 @@
 ﻿namespace CarDealer.Services
 {
+    using System.Collections;
     using System.Collections.Generic;
+    using System.Data.Entity;
     using System.Linq;
+    using AutoMapper;
+    using BindingModels;
+    using Models;
     using ViewModels;
+    using ViewModels.Suppliers;
 
     public class SuppliersService : Service
     {
-        public IEnumerable<SupplierViewModel> GetAllSuppliers(string type)
+        public IEnumerable<SupplierViewModel> GetAllSuppliersByType(string type)
         {
             IEnumerable<SupplierViewModel> suppliers = null;
             if (type != null)
@@ -48,6 +54,51 @@
                             NumberOfParts = s.Parts.Count
                         })
                         .ToList();
+        }
+
+        public IEnumerable<NewSupplierViewModel> GetNewSuppliersVm()
+        {
+            IEnumerable<Supplier> suppliersInDb = this.DbContext.Suppliers;
+            IEnumerable<NewSupplierViewModel> allSuppliers =
+                Mapper.Map<IEnumerable<Supplier>, IEnumerable<NewSupplierViewModel>>(suppliersInDb);
+
+            return allSuppliers;
+        }
+
+        public void AddSupplier(Supplier supplier)
+        {
+            this.DbContext.Suppliers.Add(supplier);
+            this.DbContext.SaveChanges();
+        }
+
+        public void EditSupplier(EditSupplierBindingModel esbm)
+        {
+            Supplier supplierEntity = this.DbContext.Suppliers.Find(esbm.Id);
+            supplierEntity.Name = esbm.Name;
+            this.DbContext.SaveChanges();
+        }
+
+        public void DeleteSupplier(int id)
+        {
+            Supplier supplierEntity = this.DbContext.Suppliers.Find(id);
+            this.DbContext.Suppliers.Remove(supplierEntity);
+            this.DbContext.SaveChanges();
+        }
+
+        public EditSupplierViewModel GetEditSupplierViewModel(int id)
+        {
+            Supplier supplierEntity = this.DbContext.Suppliers.Find(id);
+            EditSupplierViewModel vm = Mapper.Map<EditSupplierViewModel>(supplierEntity);
+
+            return vm;
+        }
+
+        public DeleteSupplierViewModel GetDeleteSupplierViewModel(int id)
+        {
+            Supplier supplierEntity = this.DbContext.Suppliers.Find(id);
+            DeleteSupplierViewModel vm = Mapper.Map<DeleteSupplierViewModel>(supplierEntity);
+
+            return vm;
         }
     }
 }

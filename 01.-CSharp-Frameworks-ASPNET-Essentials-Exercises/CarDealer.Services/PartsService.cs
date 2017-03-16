@@ -7,6 +7,8 @@
     using BindingModels;
     using Models;
     using ViewModels;
+    using ViewModels.Parts;
+    using ViewModels.Suppliers;
 
     public class PartsService : Service
     {

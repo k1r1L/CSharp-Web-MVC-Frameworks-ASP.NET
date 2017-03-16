@@ -5,6 +5,7 @@
     using CarDealer.BindingModels;
     using CarDealer.Services;
     using CarDealer.ViewModels;
+    using CarDealer.ViewModels.Sales;
 
     [RoutePrefix("sales")]
     public class SalesController : Controller
