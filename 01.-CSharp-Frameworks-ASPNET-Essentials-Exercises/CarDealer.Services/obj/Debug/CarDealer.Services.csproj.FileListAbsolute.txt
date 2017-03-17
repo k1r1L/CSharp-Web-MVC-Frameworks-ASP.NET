@@ -58,3 +58,23 @@ C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks
 C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\AutoMapper.xml
 C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\EntityFramework.xml
 C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\CarDealer.Services.dll.config
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\CarDealer.Services.dll
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\CarDealer.Services.pdb
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\AutoMapper.dll
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\CarDealer.BindingModels.dll
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\CarDealer.Data.dll
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\CarDealer.Models.dll
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\CarDealer.ViewModels.dll
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\EntityFramework.dll
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\CarDealer.BindingModels.pdb
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\CarDealer.Data.pdb
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\CarDealer.Models.pdb
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\CarDealer.ViewModels.pdb
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\AutoMapper.xml
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\EntityFramework.xml
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\obj\Debug\CarDealer.Services.csprojResolveAssemblyReference.cache
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\obj\Debug\CarDealer.Services.dll
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.Services\obj\Debug\CarDealer.Services.pdb

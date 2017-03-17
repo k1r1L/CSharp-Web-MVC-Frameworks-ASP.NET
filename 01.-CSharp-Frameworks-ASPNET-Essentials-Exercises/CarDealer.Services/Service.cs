@@ -8,6 +8,7 @@
     using Models;
     using ViewModels;
     using ViewModels.Customers;
+    using ViewModels.Logs;
     using ViewModels.Parts;
     using ViewModels.Sales;
     using ViewModels.Suppliers;
@@ -55,12 +56,19 @@
                 action.CreateMap<Supplier, NewSupplierViewModel>();
                 action.CreateMap<Supplier, EditSupplierViewModel>();
                 action.CreateMap<Supplier, DeleteSupplierViewModel>();
+                action.CreateMap<Log, LogViewModel>()
+                    .ForMember(vm => vm.Owner, configExpression => configExpression.MapFrom(log => log.Owner.Username));
             });
         }
 
         public bool IsLogged()
         {
             return this.DbContext.Logins.Any();
+        }
+
+        public User GetCurrentlyLogged()
+        {
+            return this.DbContext.Logins.First().User;
         }
     }
 }

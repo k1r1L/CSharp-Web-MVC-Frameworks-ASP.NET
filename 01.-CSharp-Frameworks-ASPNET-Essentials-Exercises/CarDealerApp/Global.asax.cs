@@ -1,13 +1,8 @@
-﻿using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
-
-namespace CarDealerApp
+﻿namespace CarDealerApp
 {
-    using AutoMapper;
-    using CarDealer.BindingModels;
-    using CarDealer.Models;
-    using CarDealer.ViewModels;
+    using System.Web.Mvc;
+    using System.Web.Optimization;
+    using System.Web.Routing;
 
     public class MvcApplication : System.Web.HttpApplication
     {

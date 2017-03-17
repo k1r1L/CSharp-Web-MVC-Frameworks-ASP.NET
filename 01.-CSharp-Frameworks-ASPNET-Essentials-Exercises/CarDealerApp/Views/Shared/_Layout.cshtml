@@ -70,6 +70,15 @@
                         <li>@Html.ActionLink("New All", "New", "Suppliers")</li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <div class="dropdown-toggle nav navbar-brand" data-toggle="dropdown">
+                            Logs
+                        <span class="caret"></span>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("All", "All", "Logs")</li>
+                    </ul>
+                </li>
             </ul>
             @if (ViewBag.IsLogged)
             {

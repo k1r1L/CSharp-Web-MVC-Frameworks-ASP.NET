@@ -13,3 +13,8 @@ C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks
 C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.BindingModels\obj\Debug\CarDealer.BindingModels.dll
 C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.BindingModels\obj\Debug\CarDealer.BindingModels.pdb
 F:\Data Kiril\SoftUni\Courses\C# Web ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.BindingModels\obj\Debug\CarDealer.BindingModels.csprojResolveAssemblyReference.cache
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.BindingModels\bin\Debug\CarDealer.BindingModels.dll
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.BindingModels\bin\Debug\CarDealer.BindingModels.pdb
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.BindingModels\obj\Debug\CarDealer.BindingModels.csprojResolveAssemblyReference.cache
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.BindingModels\obj\Debug\CarDealer.BindingModels.dll
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.BindingModels\obj\Debug\CarDealer.BindingModels.pdb

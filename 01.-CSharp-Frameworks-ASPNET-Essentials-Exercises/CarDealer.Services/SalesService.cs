@@ -3,6 +3,7 @@ using System.Linq;
 
 namespace CarDealer.Services
 {
+    using System;
     using AutoMapper;
     using BindingModels;
     using Models;
@@ -177,6 +178,13 @@ namespace CarDealer.Services
         {
             Sale saleEntity = Mapper.Map<Sale>(asbm);
             this.DbContext.Sales.Add(saleEntity);
+            this.DbContext.Logs.Add(new Log()
+            {
+                ModifiedTable = "Sale",
+                Operation = "Add",
+                TimeLogged = DateTime.Now,
+                Owner = this.GetCurrentlyLogged()
+            });
             this.DbContext.SaveChanges();
         }
     }

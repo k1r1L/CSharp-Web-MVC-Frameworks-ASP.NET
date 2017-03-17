@@ -1,5 +1,6 @@
 ﻿namespace CarDealer.Services
 {
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Data.Entity;
@@ -68,6 +69,13 @@
         public void AddSupplier(Supplier supplier)
         {
             this.DbContext.Suppliers.Add(supplier);
+            this.DbContext.Logs.Add(new Log()
+            {
+                ModifiedTable = "Supplier",
+                Operation = "Add",
+                TimeLogged = DateTime.Now,
+                Owner = this.GetCurrentlyLogged()
+            });
             this.DbContext.SaveChanges();
         }
 
@@ -75,13 +83,33 @@
         {
             Supplier supplierEntity = this.DbContext.Suppliers.Find(esbm.Id);
             supplierEntity.Name = esbm.Name;
+            this.DbContext.Logs.Add(new Log()
+            {
+                ModifiedTable = "Supplier",
+                Operation = "Edit",
+                TimeLogged = DateTime.Now,
+                Owner = this.GetCurrentlyLogged()
+            });
             this.DbContext.SaveChanges();
         }
 
         public void DeleteSupplier(int id)
         {
             Supplier supplierEntity = this.DbContext.Suppliers.Find(id);
-            this.DbContext.Suppliers.Remove(supplierEntity);
+            List<Part> parts = supplierEntity.Parts.ToList();
+            foreach (Part part in parts)
+            {
+                this.DbContext.Entry(part).State = EntityState.Deleted;
+            }
+
+            this.DbContext.Entry(supplierEntity).State = EntityState.Deleted;
+            this.DbContext.Logs.Add(new Log()
+            {
+                ModifiedTable = "Supplier",
+                Operation = "Delete",
+                TimeLogged = DateTime.Now,
+                Owner = this.GetCurrentlyLogged()
+            });
             this.DbContext.SaveChanges();
         }
 

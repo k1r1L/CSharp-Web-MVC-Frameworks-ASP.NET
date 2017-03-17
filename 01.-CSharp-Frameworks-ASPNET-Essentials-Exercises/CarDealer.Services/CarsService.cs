@@ -61,6 +61,13 @@
         {
             Car carEntity = Mapper.Map<Car>(acbm);
             this.DbContext.Cars.Add(carEntity);
+            this.DbContext.Logs.Add(new Log()
+            {
+                ModifiedTable = "Car",
+                Operation = "Add",
+                TimeLogged = DateTime.Now,
+                Owner = this.GetCurrentlyLogged()
+            });
             this.DbContext.SaveChanges();
         }
 

@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\OperationAttribute.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Part.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

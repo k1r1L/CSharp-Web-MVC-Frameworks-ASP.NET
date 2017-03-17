@@ -13,3 +13,8 @@ C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks
 C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.ViewModels\obj\Debug\CarDealer.ViewModels.csprojResolveAssemblyReference.cache
 C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.ViewModels\obj\Debug\CarDealer.ViewModels.dll
 C:\Users\v\Desktop\SoftUni\C# Web\MVC Frameworks - ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.ViewModels\obj\Debug\CarDealer.ViewModels.pdb
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.ViewModels\bin\Debug\CarDealer.ViewModels.dll
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.ViewModels\bin\Debug\CarDealer.ViewModels.pdb
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.ViewModels\obj\Debug\CarDealer.ViewModels.csprojResolveAssemblyReference.cache
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.ViewModels\obj\Debug\CarDealer.ViewModels.dll
+C:\Users\v\Documents\GitHub\CSharp-Web-MVC-Frameworks-ASP.NET\01.-CSharp-Frameworks-ASPNET-Essentials-Exercises\CarDealer.ViewModels\obj\Debug\CarDealer.ViewModels.pdb

@@ -17,8 +17,6 @@ namespace CarDealer.Models
         public int Quantity { get; set; }
         public virtual ICollection<Car> Cars { get; set; }
         public virtual Supplier Supplier { get; set; }
-        
-        [ForeignKey("Supplier")]
-        public int SupplierId { get; set; }
+
     }
 }
