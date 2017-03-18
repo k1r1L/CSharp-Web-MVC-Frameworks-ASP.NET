@@ -1,4 +1,6 @@
-﻿@model IEnumerable<CarDealer.ViewModels.Cars.CarViewModel>
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<CarDealer.ViewModels.Cars.CarViewModel>
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewBag.Title = "All";
@@ -9,15 +11,14 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Make)
+            <strong>Make</strong>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Model)
+            <strong>Model</strong>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TravelledDistance)
+            <strong>Travelled Distance</strong>
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -35,3 +36,7 @@
 }
 
 </table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("All",
+    new { page, make = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

@@ -8,6 +8,7 @@
     using CarDealer.ViewModels;
     using CarDealer.ViewModels.Cars;
     using CarDealer.ViewModels.Parts;
+    using PagedList;
 
     [RoutePrefix("cars")]
     public class CarsController : Controller
@@ -22,11 +23,17 @@
 
         // GET: Cars
         [Route("")] // sets default action
-        [Route("all/{make?}"), HttpGet]
-        public ActionResult All(string make)
+        [Route("{make?}"), HttpGet]
+        public ActionResult All(int? page, string make, string currentFilter)
         {
+            int pageSize = 20;
+            ViewBag.CurrentSort = make;
+            
+            ViewBag.CurrentFilter = make;
+            int pageNumber = page ?? 1;
+
             IEnumerable<CarViewModel> vm = this.service.GetAllCars(make);
-            return View(vm);
+            return View(vm.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Car with parts by id (not optional)

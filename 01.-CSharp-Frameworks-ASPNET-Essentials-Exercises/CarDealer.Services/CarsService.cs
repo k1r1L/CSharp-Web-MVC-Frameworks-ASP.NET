@@ -35,7 +35,8 @@
                 Make = c.Make,
                 Model = c.Model,
                 TravelledDistance = c.TravelledDistance
-            });
+            })
+            .OrderBy(c => c.Make);
         }
 
         public CarPartsViewModel GetCarWithParts(int id)
