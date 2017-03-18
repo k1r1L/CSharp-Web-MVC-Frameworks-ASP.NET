@@ -51,4 +51,4 @@ packages
 !packages/repositories.config
 # Other
 *.pptx
-*.doc
+*.docx
