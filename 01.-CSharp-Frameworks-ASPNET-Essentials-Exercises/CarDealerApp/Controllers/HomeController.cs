@@ -1,5 +1,7 @@
 ﻿namespace CarDealerApp.Controllers
 {
+    using System;
+    using System.CodeDom;
     using System.Web.Mvc;
     using CarDealer.Services;
 
@@ -19,6 +21,14 @@
         public ActionResult Index()
         {
             return View();
+        }
+
+        // GET: Exception
+        [HttpGet]
+        [Route("exception")]
+        public ActionResult Exception()
+        {
+            throw new ArgumentException("Error message!");
         }
     }
 }

@@ -80,20 +80,7 @@
                     </ul>
                 </li>
             </ul>
-            @if (ViewBag.IsLogged)
-            {
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="nav navbar-brand">Hello, @Html.Action("GetCurrentUsername", "Account")</li>
-                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
-                </ul>
-            }
-            else
-            {
-                <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
-                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                </ul>
-            }
+          
         </div>
     </div>
     <div class="container body-content">
