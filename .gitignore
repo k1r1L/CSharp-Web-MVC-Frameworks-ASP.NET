@@ -49,7 +49,6 @@ Temporary Items
 #NuGet
 packages
 !packages/repositories.config
-# Other
-*.pptx
+
 bin
 obj
