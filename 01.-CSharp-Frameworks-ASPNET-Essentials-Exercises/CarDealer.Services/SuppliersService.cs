@@ -69,13 +69,6 @@
         public void AddSupplier(Supplier supplier)
         {
             this.DbContext.Suppliers.Add(supplier);
-            this.DbContext.Logs.Add(new Log()
-            {
-                ModifiedTable = "Supplier",
-                Operation = "Add",
-                TimeLogged = DateTime.Now,
-                Owner = this.GetCurrentlyLogged()
-            });
             this.DbContext.SaveChanges();
         }
 
@@ -83,13 +76,6 @@
         {
             Supplier supplierEntity = this.DbContext.Suppliers.Find(esbm.Id);
             supplierEntity.Name = esbm.Name;
-            this.DbContext.Logs.Add(new Log()
-            {
-                ModifiedTable = "Supplier",
-                Operation = "Edit",
-                TimeLogged = DateTime.Now,
-                Owner = this.GetCurrentlyLogged()
-            });
             this.DbContext.SaveChanges();
         }
 
@@ -103,13 +89,6 @@
             }
 
             this.DbContext.Entry(supplierEntity).State = EntityState.Deleted;
-            this.DbContext.Logs.Add(new Log()
-            {
-                ModifiedTable = "Supplier",
-                Operation = "Delete",
-                TimeLogged = DateTime.Now,
-                Owner = this.GetCurrentlyLogged()
-            });
             this.DbContext.SaveChanges();
         }
 

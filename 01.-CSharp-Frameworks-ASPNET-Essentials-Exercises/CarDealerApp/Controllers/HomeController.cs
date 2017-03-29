@@ -13,7 +13,6 @@
         public HomeController()
         {
             this.service = new HomeService();
-            ViewBag.IsLogged = this.service.IsLogged();
         }
 
         // GET: Home

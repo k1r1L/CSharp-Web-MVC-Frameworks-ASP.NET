@@ -42,7 +42,6 @@
                 action.CreateMap<AddCarBindingModel, Car>()
                     .ForMember(c => c.Parts, config => config.MapFrom(bm =>
                         this.DbContext.Parts.Where(p => bm.Parts.Contains(p.Id))));
-                action.CreateMap<RegisterUserBindingModel, User>();
                 action.CreateMap<Customer, AddSaleCustomerViewModel>();
                 action.CreateMap<Car, AddSaleCarViewModel>();
                 action.CreateMap<Sale, AddSaleViewModel>();
@@ -56,19 +55,8 @@
                 action.CreateMap<Supplier, NewSupplierViewModel>();
                 action.CreateMap<Supplier, EditSupplierViewModel>();
                 action.CreateMap<Supplier, DeleteSupplierViewModel>();
-                action.CreateMap<Log, LogViewModel>()
-                    .ForMember(vm => vm.Owner, configExpression => configExpression.MapFrom(log => log.Owner.Username));
             });
         }
 
-        public bool IsLogged()
-        {
-            return this.DbContext.Logins.Any();
-        }
-
-        public User GetCurrentlyLogged()
-        {
-            return this.DbContext.Logins.First().User;
-        }
     }
 }

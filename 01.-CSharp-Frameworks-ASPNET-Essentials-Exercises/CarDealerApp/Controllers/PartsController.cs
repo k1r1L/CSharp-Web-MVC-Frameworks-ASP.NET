@@ -15,7 +15,6 @@
         public PartsController()
         {
             this.service = new PartsService();
-            ViewBag.IsLogged = this.service.IsLogged();
         }
       
         // GET: Add a part

@@ -178,13 +178,6 @@ namespace CarDealer.Services
         {
             Sale saleEntity = Mapper.Map<Sale>(asbm);
             this.DbContext.Sales.Add(saleEntity);
-            this.DbContext.Logs.Add(new Log()
-            {
-                ModifiedTable = "Sale",
-                Operation = "Add",
-                TimeLogged = DateTime.Now,
-                Owner = this.GetCurrentlyLogged()
-            });
             this.DbContext.SaveChanges();
         }
     }

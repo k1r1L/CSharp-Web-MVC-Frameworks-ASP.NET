@@ -15,7 +15,6 @@
         public SuppliersController()
         {
             this.service = new SuppliersService();
-            ViewBag.IsLogged = this.service.IsLogged();
         }
 
         // GET: Suppliers by type (optional)
@@ -40,10 +39,6 @@
         [HttpPost]
         public ActionResult Add([Bind(Include = "Name,IsImporter")] Supplier supplier)
         {
-            if (!this.service.IsLogged())
-            {
-                return Redirect("/account/login");
-            }
 
             if (ModelState.IsValid)
             {
@@ -58,10 +53,6 @@
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            if (!this.service.IsLogged())
-            {
-                return Redirect("/account/login");
-            }
 
             EditSupplierViewModel vm = this.service.GetEditSupplierViewModel(id);
             return this.View(vm);
@@ -72,11 +63,6 @@
         [HttpPost]
         public ActionResult Edit([Bind(Include = "Id,Name")] EditSupplierBindingModel esbm)
         {
-            if (!this.service.IsLogged())
-            {
-                return Redirect("/account/login");
-            }
-
             if (ModelState.IsValid)
             {
                 this.service.EditSupplier(esbm);
@@ -91,11 +77,6 @@
         public ActionResult Delete(int id)
         {
 
-            if (!this.service.IsLogged())
-            {
-                return Redirect("/account/login");
-            }
-
             DeleteSupplierViewModel vm = this.service.GetDeleteSupplierViewModel(id);
 
             return this.View(vm);
@@ -106,12 +87,6 @@
         [HttpPost]
         public ActionResult DeleteConfirmed([Bind(Include = "Id")] int id)
         {
-
-            if (!this.service.IsLogged())
-            {
-                return Redirect("/account/login");
-            }
-
             this.service.DeleteSupplier(id);
             return RedirectToAction("New");
         }

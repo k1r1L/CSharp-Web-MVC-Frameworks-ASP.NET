@@ -18,7 +18,6 @@
         public CarsController()
         {
             this.service = new CarsService();
-            ViewBag.IsLogged = this.service.IsLogged();
         }
 
         // GET: Cars
@@ -48,11 +47,7 @@
         // GET: Add car
         [Route("~/car/create"), HttpGet]
         public ActionResult Add()
-        {
-            if (!this.service.IsLogged())
-            {
-                return Redirect("/account/login");
-            }
+        { 
 
             IEnumerable<AllPartViewModel> allParts = this.service.GetAllParts();
             return View(allParts);

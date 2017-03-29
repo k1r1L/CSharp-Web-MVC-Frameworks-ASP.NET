@@ -15,7 +15,6 @@
         public SalesController()
         {
             this.service = new SalesService();
-            ViewBag.IsLogged = this.service.IsLogged();
         }
 
         // GET: All sales or individual sale (optional)
@@ -53,11 +52,6 @@
         [HttpGet]
         public ActionResult Add()
         {
-            if (!this.service.IsLogged())
-            {
-                return Redirect("/account/login");
-            }
-
             AddSaleViewModel saleViewModel = this.service.GetAddSaleViewModel();
             return View(saleViewModel);
         }
@@ -66,11 +60,6 @@
         [HttpGet]
         public ActionResult Review([Bind(Include = "CustomerId,CarId,Discount")] AddSaleBindingModel bindingModel)
         {
-            if (!this.service.IsLogged())
-            {
-                return Redirect("/account/login");
-            }
-
             ReviewSaleViewModel reviewVm = this.service.GetReviewSaleViewModel(bindingModel);
             return this.View(reviewVm);
         }
@@ -79,10 +68,6 @@
         [HttpPost]
         public ActionResult FinalizeSale([Bind(Include = "CarId,CustomerId,Discount")] AddSaleBindingModel asbm)
         {
-            if (!this.service.IsLogged())
-            {
-                return Redirect("/account/login");
-            }
 
             this.service.FinalizeSale(asbm);
             return RedirectToAction("All");
