@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CameraBazaar.Models.Constants
+﻿namespace CameraBazaar.Models.Constants
 {
     public class ValidationMessages
     {
@@ -14,6 +8,7 @@ namespace CameraBazaar.Models.Constants
         public const string CameraModelValidationMessage = "Value can only contain uppercase letters, digits and dash.";
         public const string MinIsoValidationMessage = "Value must be 50 or 100";
         public const string MaxIsoValidationMessage = "Value must be dividable by 100";
+        public const string DescriptionMessage = "The description must not be more than 6000 symbols.";
         public const string ImageUrlMessage = "Value must start with http:// or https://";
     }
 }

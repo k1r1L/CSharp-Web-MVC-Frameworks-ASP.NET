@@ -1,0 +1,12 @@
+﻿@model CameraBazaar.Models.ViewModels.User.ProfileVm
+
+@{
+    ViewBag.Title = "User Profile";
+}
+
+<h1>@Html.DisplayFor(vm => vm.UserName)</h1>
+<strong>@Html.DisplayNameFor(vm => vm.Email)</strong> @Html.DisplayFor(vm => vm.Email)<br/>
+<strong>@Html.DisplayNameFor(vm => vm.PhoneNumber)</strong> @Html.DisplayFor(vm => vm.PhoneNumber)<br />
+<strong>Cameras: </strong> @Html.DisplayFor(vm => vm.CamerasInStock) in stock/ @Html.DisplayFor(vm => vm.CamerasOutOfStock) out of stock<br />
+<h3>Cameras:</h3>
+@Html.Partial("_ListCameras", Model.Cameras)

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CameraBazaar.Models.ViewModels.Camera.AllCameraVm>
+
+@{
+    Layout = null;
+}
+
+@if (Model.Any())
+{
+    foreach (var camera in Model)
+    {
+        <div class="list-camera">
+            <img src="@camera.ImageUrl" alt="" width="200" height="200" />
+            @Html.DisplayFor(vms => camera.Make)
+            @Html.DisplayFor(vms => camera.Model)
+
+            $@Html.DisplayFor(vms => camera.Price)
+
+            <br />
+            <br />
+            @Html.ActionLink("Details", "Details", new { id = camera.Id })
+
+            @if (camera.InStock)
+            {
+                <span class="text-success">IN STOCK</span>
+            }
+            else
+            {
+                <span class="text-danger">OUT OF STOCK</span>
+            }
+        </div>
+    }
+}
+else
+{
+  <p>The user is not selling any cameras. Go to @Html.ActionLink("home page", "Index", "Home") to find more offers</p>
+}

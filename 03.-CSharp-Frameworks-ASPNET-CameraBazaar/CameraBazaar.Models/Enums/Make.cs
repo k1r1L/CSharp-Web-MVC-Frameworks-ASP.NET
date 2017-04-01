@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CameraBazaar.Models.ViewModels.Manage
+namespace CameraBazaar.Models.Enums
 {
-
-    public class FactorViewModel
+    public enum Make
     {
-        public string Purpose { get; set; }
+        Canon,
+        Nikon,
+        Penta,
+        Sony 
     }
 }

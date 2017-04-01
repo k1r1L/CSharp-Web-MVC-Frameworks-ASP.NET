@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.camera-form {
+    align-content: center;
+}
+
+.list-camera {
+    border: 2px solid black;
+}

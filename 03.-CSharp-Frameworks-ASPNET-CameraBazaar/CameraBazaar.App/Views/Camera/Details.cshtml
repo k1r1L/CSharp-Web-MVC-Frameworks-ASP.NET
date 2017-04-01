@@ -1,0 +1,26 @@
+﻿@model CameraBazaar.Models.ViewModels.Camera.DetailsCameraVm
+
+@{
+    ViewBag.Title = "Camera Details";
+}
+
+<div class="text-center">
+
+    @Html.DisplayFor(vm => Model.Make) @Html.DisplayFor(vm => Model.Model) - $@Html.DisplayFor(vm => Model.Price) -
+    @if (Model.InStock)
+    {
+        <span class="text-success">IN STOCK</span>
+    }
+    else
+    {
+        <span class="text-danger">OUT OF STOCK</span>
+    }
+    @Html.ActionLink(Model.SellerUsername, "Profile", "User", new { name = Model.SellerUsername }, null)<br/>
+    <img src="@Model.ImageUrl" alt="" width="200" height="200"/><br />
+    <strong>@Html.DisplayNameFor(vms => Model.IsFullFrame)</strong> @(Model.IsFullFrame ? "Yes" : "No")<br/>    
+    <strong>@Html.DisplayNameFor(vms => Model.MinShutterSpeed)</strong> @Html.DisplayFor(vm => vm.MinShutterSpeed)<br />    
+    <strong>@Html.DisplayNameFor(vms => Model.MinIso)</strong> @Html.DisplayFor(vm => vm.MinIso)<br />
+    <strong>@Html.DisplayNameFor(vms => Model.MaxIso)</strong> @Html.DisplayFor(vm => vm.MaxIso)<br />
+    <strong>@Html.DisplayNameFor(vms => Model.VideoResolution)</strong> @Html.DisplayFor(vm => vm.VideoResolution)<br />
+    <strong>@Html.DisplayNameFor(vms => Model.Description)</strong> @Html.DisplayFor(vm => vm.Description)<br />
+</div>

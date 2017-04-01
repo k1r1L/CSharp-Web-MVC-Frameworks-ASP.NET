@@ -13,9 +13,20 @@ namespace CameraBazaar.Data
         {
         }
 
+        public DbSet<Camera> Cameras { get; set; }
+
         public static CameraBazzarContext Create()
         {
             return new CameraBazzarContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Camera>()
+                .Property(c => c.Price)
+                .HasPrecision(16, 2);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

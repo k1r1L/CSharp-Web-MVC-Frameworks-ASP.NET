@@ -12,7 +12,11 @@ namespace CameraBazaar.App
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.MapRoute(
+               name: "User Profile",
+               url: "User/Profile/{name}",
+               defaults: new { controller = "User", action = "Profile" }
+           );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
