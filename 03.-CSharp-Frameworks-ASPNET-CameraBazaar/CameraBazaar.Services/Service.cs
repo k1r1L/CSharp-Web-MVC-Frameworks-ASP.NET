@@ -25,7 +25,9 @@
                     action.CreateMap<AddCameraVm, Camera>();
                     action.CreateMap<Camera, AllCameraVm>()
                         .ForMember(vm => vm.InStock,
-                            configurationExpression => configurationExpression.MapFrom(entity => entity.Quantity != 0));
+                            configurationExpression => configurationExpression.MapFrom(entity => entity.Quantity != 0))
+                        .ForMember(vm => vm.SellerUsername,
+                            configurationExpression => configurationExpression.MapFrom(entity => entity.Owner.UserName));
                     action.CreateMap<ApplicationUser, ProfileVm>()
                         .ForMember(vm => vm.CamerasInStock,
                             configurationExpression =>
@@ -40,7 +42,8 @@
                             configurationExpression => configurationExpression.MapFrom(entity => entity.Quantity != 0))
                         .ForMember(vm => vm.SellerUsername,
                             configurationExpression => configurationExpression.MapFrom(entity => entity.Owner.UserName));
-
+                    action.CreateMap<Camera, EditCameraVm>();
+                    action.CreateMap<Camera, DeleteCameraVm>();
                 });
         }
 

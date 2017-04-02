@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-collapse collapse navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -30,7 +30,9 @@
                         <li>@Html.ActionLink("All", "All", "Camera")</li>
                     </ul>
                 </li>
-               @Html.Partial("_LoginPartial")
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.Partial("_LoginPartial")</li>
             </ul>
         </div>
     </div>

@@ -18,6 +18,11 @@ namespace CameraBazaar.App
                defaults: new { controller = "User", action = "Profile" }
            );
             routes.MapRoute(
+               name: "User Profile",
+               url: "User/EditProfile/{username}",
+               defaults: new { controller = "User", action = "EditProfile" }
+           );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

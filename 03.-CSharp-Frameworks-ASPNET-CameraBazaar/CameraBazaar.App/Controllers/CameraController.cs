@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
+    using Models.EntityModels;
     using Models.ViewModels.Camera;
     using Services;
 
@@ -52,9 +53,62 @@
         [HttpGet]
         public ActionResult Details(int id)
         {
-            DetailsCameraVm detailsCameraVm = this.service.RetrieveCamera(id);
+            DetailsCameraVm detailsCameraVm = this.service.RetrieveDetailsCamera(id);
 
             return this.View(detailsCameraVm);
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            Camera cameraEntity = this.service.RetreiveCameraById(id);
+            if (cameraEntity == null || cameraEntity.Owner.UserName != HttpContext.User.Identity.Name)
+            {
+                return RedirectToAction("All");
+            }
+
+            EditCameraVm editCameraVm = this.service.RetrieveEditCamera(cameraEntity);
+
+            return View(editCameraVm);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(EditCameraVm vm)
+        {
+            if (ModelState.IsValid)
+            {
+                this.service.EditCamera(vm);
+                return RedirectToAction("All");
+            }
+
+            return this.View();
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Camera cameraEntity = this.service.RetreiveCameraById(id);
+            if (cameraEntity == null || cameraEntity.Owner.UserName != HttpContext.User.Identity.Name)
+            {
+                return RedirectToAction("All");
+            }
+
+            DeleteCameraVm deleteCameraVm = this.service.RetrieveDeleteCamera(cameraEntity);
+
+            return this.View(deleteCameraVm);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Camera cameraEntity = this.service.RetreiveCameraById(id);
+            if (cameraEntity == null || cameraEntity.Owner.UserName != HttpContext.User.Identity.Name)
+            {
+                return RedirectToAction("All");
+            }
+
+            this.service.DeleteCamera(cameraEntity);
+            return this.RedirectToAction("All");
         }
     }
 }

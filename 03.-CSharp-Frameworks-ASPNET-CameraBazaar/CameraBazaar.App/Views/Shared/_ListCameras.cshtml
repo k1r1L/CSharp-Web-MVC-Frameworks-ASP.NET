@@ -1,36 +1,39 @@
 ﻿@model IEnumerable<CameraBazaar.Models.ViewModels.Camera.AllCameraVm>
-
-@{
-    Layout = null;
-}
-
-@if (Model.Any())
-{
-    foreach (var camera in Model)
-    {
-        <div class="list-camera">
-            <img src="@camera.ImageUrl" alt="" width="200" height="200" />
-            @Html.DisplayFor(vms => camera.Make)
-            @Html.DisplayFor(vms => camera.Model)
-
-            $@Html.DisplayFor(vms => camera.Price)
-
-            <br />
-            <br />
-            @Html.ActionLink("Details", "Details", new { id = camera.Id })
-
-            @if (camera.InStock)
+<link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+<div class="container">
+    <div class="col-lg-offset-3">
+        @if (Model.Any())
+        {
+            foreach (var camera in Model)
             {
-                <span class="text-success">IN STOCK</span>
+                <div class="list-camera">
+                    <img src="@camera.ImageUrl" alt="" width="100" height="100" />
+                    <span class="list-camera-top-corner">@Html.DisplayFor(vms => camera.Make) @Html.DisplayFor(vms => camera.Model) $@Html.DisplayFor(vms => camera.Price)</span>
+                    <br />
+                    @if (User.Identity.Name == camera.SellerUsername)
+                    {
+                        @Html.ActionLink("Edit", "Edit", "Camera", new { id = camera.Id}, htmlAttributes: new { @class = "btn btn-primary", @style = "float: right;"})
+                        @Html.ActionLink("Delete", "Delete", "Camera", new { id = camera.Id }, htmlAttributes: new { @class = "btn btn-warning", @style = "float: right;" })
+
+                    }
+                    <br />
+                    <br />
+
+                    @Html.ActionLink("Details", "Details", "Camera", new { id = camera.Id }, null)
+                    @if (camera.InStock)
+                    {
+                        <span class="text-success list-camera-stock">IN STOCK</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger list-camera-stock">OUT OF STOCK</span>
+                    }
+                </div>
             }
-            else
-            {
-                <span class="text-danger">OUT OF STOCK</span>
-            }
-        </div>
-    }
-}
-else
-{
-  <p>The user is not selling any cameras. Go to @Html.ActionLink("home page", "Index", "Home") to find more offers</p>
-}
+        }
+        else
+        {
+            <p>The user is not selling any cameras. Go to @Html.ActionLink("home page", "Index", "Home") to find more offers</p>
+        }
+    </div>
+</div>

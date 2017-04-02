@@ -138,7 +138,9 @@
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\Camera\AddCameraVm.cs" />
     <Compile Include="ViewModels\Camera\AllCameraVm.cs" />
+    <Compile Include="ViewModels\Camera\DeleteCameraVm.cs" />
     <Compile Include="ViewModels\Camera\DetailsCameraVm.cs" />
+    <Compile Include="ViewModels\Camera\EditCameraVm.cs" />
     <Compile Include="ViewModels\User\ProfileVm.cs" />
   </ItemGroup>
   <ItemGroup>

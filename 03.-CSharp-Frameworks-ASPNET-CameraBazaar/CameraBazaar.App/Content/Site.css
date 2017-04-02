@@ -23,10 +23,17 @@ textarea {
     max-width: 280px;
 }
 
-.camera-form {
-    align-content: center;
-}
-
 .list-camera {
     border: 2px solid black;
+    width: 500px;
+    height: 180px;
 }
+
+.list-camera-top-corner {
+    float: right;
+}
+
+.list-camera-stock {
+    float: right;
+}
+

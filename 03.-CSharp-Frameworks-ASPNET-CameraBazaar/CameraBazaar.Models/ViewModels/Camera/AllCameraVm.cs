@@ -15,5 +15,7 @@
         public bool InStock { get; set; }
 
         public string ImageUrl { get; set; }
+
+        public string SellerUsername { get; set; }
     }
 }
