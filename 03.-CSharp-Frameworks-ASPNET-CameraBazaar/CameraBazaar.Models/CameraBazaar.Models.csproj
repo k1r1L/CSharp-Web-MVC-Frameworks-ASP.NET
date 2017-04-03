@@ -141,6 +141,7 @@
     <Compile Include="ViewModels\Camera\DeleteCameraVm.cs" />
     <Compile Include="ViewModels\Camera\DetailsCameraVm.cs" />
     <Compile Include="ViewModels\Camera\EditCameraVm.cs" />
+    <Compile Include="ViewModels\User\EditProfileVm.cs" />
     <Compile Include="ViewModels\User\ProfileVm.cs" />
   </ItemGroup>
   <ItemGroup>

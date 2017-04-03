@@ -277,6 +277,7 @@
     <Content Include="Views\Camera\Details.cshtml" />
     <Content Include="Views\Camera\Edit.cshtml" />
     <Content Include="Views\Camera\Delete.cshtml" />
+    <Content Include="Views\User\EditProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CameraBazaar.Data\CameraBazaar.Data.csproj">

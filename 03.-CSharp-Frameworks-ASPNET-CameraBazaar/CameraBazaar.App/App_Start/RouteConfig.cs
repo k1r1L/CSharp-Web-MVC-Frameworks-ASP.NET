@@ -18,7 +18,7 @@ namespace CameraBazaar.App
                defaults: new { controller = "User", action = "Profile" }
            );
             routes.MapRoute(
-               name: "User Profile",
+               name: "User Edit Profile",
                url: "User/EditProfile/{username}",
                defaults: new { controller = "User", action = "EditProfile" }
            );

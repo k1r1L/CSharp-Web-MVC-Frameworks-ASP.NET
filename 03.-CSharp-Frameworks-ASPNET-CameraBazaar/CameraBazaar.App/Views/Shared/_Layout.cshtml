@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -28,6 +29,15 @@
                     <ul class="dropdown-menu">
                         <li>@Html.ActionLink("Add", "Add", "Camera")</li>
                         <li>@Html.ActionLink("All", "All", "Camera")</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <div class="dropdown-toggle nav navbar-brand" data-toggle="dropdown">
+                        Profile
+                    <span class="caret"></span>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Edit", "EditProfile", "User", new {@username = User.Identity.GetUserName()}, null)</li>
                     </ul>
                 </li>
             </ul>

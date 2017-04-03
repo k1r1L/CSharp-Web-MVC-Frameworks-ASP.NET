@@ -20,11 +20,25 @@ namespace CameraBazaar.App.Controllers
         }
 
         // GET: User
+        [HttpGet]
         public ActionResult Profile(string name)
         {
             ProfileVm profileVm = this.service.RetrieveProfileVm(name);
 
             return View(profileVm);
+        }
+
+        [HttpGet]
+        public ActionResult EditProfile(string username)
+        {
+            if (username != this.HttpContext.User.Identity.Name)
+            {
+                return this.Redirect("/Home/Index");
+            }
+
+            EditProfileVm editProfileVm = this.service.RetrieveEditProfileVm(username);
+
+            return this.View(editProfileVm);
         }
     }
 }

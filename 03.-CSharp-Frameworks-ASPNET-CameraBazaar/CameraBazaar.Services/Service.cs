@@ -44,6 +44,9 @@
                             configurationExpression => configurationExpression.MapFrom(entity => entity.Owner.UserName));
                     action.CreateMap<Camera, EditCameraVm>();
                     action.CreateMap<Camera, DeleteCameraVm>();
+                    action.CreateMap<ApplicationUser, EditProfileVm>()
+                        .ForMember(vm => vm.Password, configurationExpression => configurationExpression.Ignore());
+
                 });
         }
 
