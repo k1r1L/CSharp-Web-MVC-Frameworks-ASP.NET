@@ -14,7 +14,7 @@
         public string Email { get; set; }
 
         [Required]
-        [Password(ErrorMessage = ValidationMessages.PasswordValidationMessage)]
+        [Password]
         [Display(Name = "Password:")]
         public string Password { get; set; }
 
@@ -22,5 +22,10 @@
         [PhoneNumber]
         [Display(Name = "Phone")]
         public string PhoneNumber { get; set; }
+
+        [Required]
+        [Password]
+        [Display(Name = "New Password:")]
+        public string NewPassword { get; set; }
     }
 }

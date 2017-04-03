@@ -24,5 +24,17 @@
 
             return editProfileVm;
         }
+
+        public ApplicationUser GetCurrentUser(string username)
+        {
+            return this.DbContext.Users.SingleOrDefault(user => user.UserName == username);
+        }
+
+        public void ChangeEmailAndNumber(EditProfileVm vm, ApplicationUser appUser)
+        {
+            appUser.PhoneNumber = vm.PhoneNumber;
+            appUser.Email = vm.Email;
+            this.DbContext.SaveChanges();
+        }
     }
 }
